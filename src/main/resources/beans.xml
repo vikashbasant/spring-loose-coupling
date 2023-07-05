@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Create an Object with the ScienceCheat by using setter injection-->
+    <bean id="sCheat" class="com.di.springloosecoupling.ScienceCheat"/>
+    <!--Create an Object with the MathCheat by using setter injection-->
+    <bean id="mCheat" class="com.di.springloosecoupling.MathCheat"/>
+    <!--Create an Object with the JavaCheat by using setter injection-->
+    <bean id="jCheat" class="com.di.springloosecoupling.JavaCheat"/>
+
+    <!--Create an Object with the Student by using setter injection-->
+    <bean id="student" class="com.di.springloosecoupling.Student">
+        <property name="cheat" ref="jCheat"/>
+    </bean>
+
+
+
+</beans>
